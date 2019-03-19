@@ -1,5 +1,6 @@
-#LeetCode-Practice
-This is just a practice for LeetCode by Python. Author By Reggiecril.
+# LeetCode-Practice
+
+##### This is just a practice for LeetCode by Python. Author By [Reggiecril](https://github.com/Reggiecril).
 ***
 + Two Sum
 ```python
