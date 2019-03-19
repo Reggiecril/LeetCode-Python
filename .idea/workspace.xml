@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7544f99d-35a0-421d-a660-17d45e3e4a0f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lengthOfLongestSubstring.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/isPalindrome.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -13,7 +13,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/LeetCode_Python$lengthOfLongestSubstring.coverage" NAME="lengthOfLongestSubstring Coverage Results" MODIFIED="1553000577837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCode_Python$lengthOfLongestSubstring.coverage" NAME="lengthOfLongestSubstring Coverage Results" MODIFIED="1553010472700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCode_Python$isPalindrome.coverage" NAME="isPalindrome Coverage Results" MODIFIED="1553011379391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCode_Python$twoSum.coverage" NAME="twoSum Coverage Results" MODIFIED="1552957231838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCode_Python$addTwoNumbers.coverage" NAME="addTwoNumbers Coverage Results" MODIFIED="1552996658959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -32,10 +33,19 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="129">
-                <caret line="59" column="2" lean-forward="true" selection-start-line="59" selection-start-column="2" selection-end-line="59" selection-end-column="17" />
+              <first_editor relative-caret-position="300">
+                <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/isPalindrome.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="16" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -49,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lengthOfLongestSubstring.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="28" selection-start-column="4" selection-end-column="28" />
+              <caret selection-end-line="13" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -77,6 +87,7 @@
         <option value="$PROJECT_DIR$/addTwoNumbers.py" />
         <option value="$PROJECT_DIR$/lengthOfLongestSubstring.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/isPalindrome.py" />
       </list>
     </option>
   </component>
@@ -124,7 +135,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.lengthOfLongestSubstring">
+  <component name="RunManager" selected="Python.isPalindrome">
     <configuration name="addTwoNumbers" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="LeetCode-Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -139,6 +150,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/addTwoNumbers.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="isPalindrome" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="LeetCode-Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/isPalindrome.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -193,6 +226,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.isPalindrome" />
         <item itemvalue="Python.lengthOfLongestSubstring" />
         <item itemvalue="Python.addTwoNumbers" />
         <item itemvalue="Python.twoSum" />
@@ -210,23 +244,23 @@
       <option name="presentableId" value="Default" />
       <updated>1552951681137</updated>
       <workItem from="1552951683867" duration="7148000" />
-      <workItem from="1552959969328" duration="2291000" />
+      <workItem from="1552959969328" duration="3525000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9439000" />
+    <option name="totallyTimeSpent" value="10673000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="795" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32859176" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32859176" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997155" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -260,6 +294,11 @@
           <line>55</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/isPalindrome.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -285,20 +324,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lengthOfLongestSubstring.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="13" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="129">
-            <caret line="59" column="2" lean-forward="true" selection-start-line="59" selection-start-column="2" selection-end-line="59" selection-end-column="17" />
+          <first_editor relative-caret-position="300">
+            <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lengthOfLongestSubstring.py">
+    <entry file="file://$PROJECT_DIR$/isPalindrome.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-start-column="4" selection-end-column="28" />
+        <state relative-caret-position="75">
+          <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="16" selection-end-column="15" />
         </state>
       </provider>
     </entry>

@@ -2,7 +2,7 @@
 
 ##### This is just a practice for LeetCode by Python. Author By [Reggiecril](https://github.com/Reggiecril).
 ***
-######1. Two Sum
+#####1. Two Sum
 ```python
     def twoSum(self, nums, target):
         """
@@ -20,7 +20,7 @@
             count+=1
 ```
 ***
-######2. Add Two Numbers
+#####2. Add Two Numbers
 ```python
     def addTwoNumbers(self, l1, l2):
         """
@@ -57,7 +57,7 @@
 
 ```
 ***
-######3. Longest Substring Without Repeating Characters
+#####3. Longest Substring Without Repeating Characters
 ```python
     def lengthOfLongestSubstring(s):
         """
@@ -73,5 +73,32 @@
             else:
                 collect.append(i)
             length=max(len(collect),length)
+
+```
+***
+#####9. Palindrome Number
+```python
+    def isPalindrome(x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+        if x < 10 and x > 0:
+            return True
+        x = str(x)
+        length = len(x)
+        count = 0
+        while count < length / 2 + 1:
+            first = x[count]
+            last = x[length - 1 - count]
+            if not first.__eq__(last):
+                return False
+            count += 1
+        return True
+    ###Best Solution
+        # if str(x) == str(x)[::-1]:
+        #     return True
+        # else:
+        #     return False
 
 ```
