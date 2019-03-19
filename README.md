@@ -2,7 +2,7 @@
 
 ##### This is just a practice for LeetCode by Python. Author By [Reggiecril](https://github.com/Reggiecril).
 ***
-+ Two Sum
+######1. Two Sum
 ```python
     def twoSum(self, nums, target):
         """
@@ -20,7 +20,7 @@
             count+=1
 ```
 ***
-+ Add Two Numbers
+######2. Add Two Numbers
 ```python
     def addTwoNumbers(self, l1, l2):
         """
@@ -54,5 +54,24 @@
         if count==1:
             l3.next=ListNode(count)
         return dummyHead.next
+
+```
+***
+######3. Longest Substring Without Repeating Characters
+```python
+    def lengthOfLongestSubstring(s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        collect = []
+        length = 0
+        for i in s:
+            if i in collect:
+                collect = collect[collect.index(i)+1:]
+                collect.append(i)
+            else:
+                collect.append(i)
+            length=max(len(collect),length)
 
 ```
