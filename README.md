@@ -2,7 +2,7 @@
 
 ##### This is just a practice for LeetCode by Python. Author By [Reggiecril](https://github.com/Reggiecril).
 ***
-#####1. Two Sum
+##### 1. Two Sum
 ```python
     def twoSum(self, nums, target):
         """
@@ -20,7 +20,7 @@
             count+=1
 ```
 ***
-#####2. Add Two Numbers
+##### 2. Add Two Numbers
 ```python
     def addTwoNumbers(self, l1, l2):
         """
@@ -57,7 +57,7 @@
 
 ```
 ***
-#####3. Longest Substring Without Repeating Characters
+##### 3. Longest Substring Without Repeating Characters
 ```python
     def lengthOfLongestSubstring(s):
         """
@@ -76,7 +76,7 @@
 
 ```
 ***
-#####9. Palindrome Number
+##### 9. Palindrome Number
 ```python
     def isPalindrome(x):
         """
@@ -100,5 +100,28 @@
         #     return True
         # else:
         #     return False
+
+```
+***
+##### 11. Container With Most Water
+```python
+    def maxArea(self, height):
+        """
+        :type height: List[int]
+        :rtype: int
+        """
+        startPtr=0
+        lastPtr=len(height)-1
+        sum=0
+        while lastPtr>startPtr:
+            sum=max(sum,min(height[lastPtr],height[startPtr])*(lastPtr-startPtr))
+            if height[lastPtr]>height[startPtr]:
+                startPtr+=1
+            elif height[startPtr]>height[lastPtr]:
+                lastPtr-=1
+            else:
+                startPtr+=1
+                lastPtr-=1
+        return sum
 
 ```
