@@ -173,3 +173,32 @@
         return dummyHead.next
 
 ```
+***
+##### 22. Generate Parentheses
+
+
+```python
+
+    class Solution(object):
+        def generateParenthesis(self,n):
+            """
+            :type n: int
+            :rtype: List[str]
+            """
+            p_list=[]
+            self.getParenthesis('', p_list, 0, 0, n);
+            return p_list
+    
+    
+        def getParenthesis(self,string, p_list, o, c, n):
+            if c == n:
+                p_list.append(string)
+            else:
+                if o > c:
+                    self.getParenthesis(string + ')', p_list, o, c + 1, n)
+    
+                if o < n:
+                    self.getParenthesis(string + '(', p_list, o + 1, c, n)
+
+
+```
