@@ -146,3 +146,30 @@
                 return i
 
 ```
+***
+##### 19. Remove Nth Node From End of List
+
+```python
+
+    def removeNthFromEnd(head, n):
+        """
+        :type head: ListNode
+        :type n: int
+        :rtype: ListNode
+        """
+        dummyHead=ListNode(0)
+        dummyHead.next=head
+        first_ptr=dummyHead
+        second_ptr=head
+    
+        for i in range(1,n):
+            second_ptr=second_ptr.next
+        while second_ptr.next:
+            second_ptr=second_ptr.next
+            first_ptr=first_ptr.next
+        l1=first_ptr.next
+        l1=l1.next
+        first_ptr.next=l1
+        return dummyHead.next
+
+```
