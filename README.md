@@ -202,3 +202,31 @@
 
 
 ```
+***
+##### 21. Merge Two Sorted Lists
+
+
+```python
+    class Solution(object):
+        def mergeTwoLists(self, l1, l2):
+            """
+            :type l1: ListNode
+            :type l2: ListNode
+            :rtype: ListNode
+            """
+            dummyHead = ListNode(0)
+            head = dummyHead
+            while l1 and l2:
+                if l1.val <= l2.val:
+                    head.next = ListNode(l1.val)
+                    l1=l1.next
+                else:
+                    head.next = ListNode(l2.val)
+                    l2=l2.next
+                head = head.next
+            if l1 == None:
+                head.next = l2
+            elif l2 == None:
+                head.next = l1
+            return dummyHead.next
+```
