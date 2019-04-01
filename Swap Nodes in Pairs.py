@@ -26,18 +26,3 @@ def swapPairs(head):
         else:
             break
     return head
-
-
-if __name__ == '__main__':
-    l1 = ListNode(5)
-    l1.next = ListNode(1)
-    l1.next.next = ListNode(2)
-    l1.next.next.next = ListNode(3)
-    l1.next.next.next.next = ListNode(4)
-    l1.next.next.next.next.next = ListNode(6)
-    l1.next.next.next.next.next.next = ListNode(7)
-    l1.next.next.next.next.next.next.next = ListNode(8)
-    l2 = swapPairs(l1)
-    while l2:
-        print(l2.val)
-        l2 = l2.next
