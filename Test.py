@@ -4,31 +4,53 @@ class ListNode(object):
         self.next = None
 
 
-def swapPairs(head):
+def letterCombinations(digits):
     """
-    :type head: ListNode
-    :rtype: ListNode
+    :type digits: str
+    :rtype: List[str]
     """
-    dummyHead = ListNode(0)
-    dummyHead.next = head
-    l1 = head
-    l2 = l1.next
-    head = l2
-    while l2:
-        dummyHead.next = l2
-        l1.next = l2.next
-        l2.next = l1
+    number = {'0': ' ', '1': '', '2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl', '6': 'mno', '7': 'pqrs', '8': 'tuv',
+              '9': 'wxyz'}
+    if len(digits) == 1:
+        return number[digits]
+    list = []
+    rever(number, digits, 0, '', list)
+    return list
 
-        if l1.next and l1.next.next:
-            dummyHead=l1
-            l1 = l1.next
-            l2 = l1.next
+
+def rever(number, digits, count, string, list):
+    if count == len(digits):
+        return
+    if len(string).__eq__(len(digits)):
+        list.append(string)
+    print(number[digits[count]].split())
+    for value in number[digits[count]].split():
+        rever(number, digits, count + 1, string + value, list)
+
+
+def climbStairs(n):
+    """
+    :type n: int
+    :rtype: int
+    """
+    list=[]
+    for i in range(n):
+        if i==0:
+            list.append(1)
+        elif i==1:
+            list.append(2)
         else:
-            break
-    return head
+            list.append(list[i-1]+list[i-2])
+    return list[n-1]
+    # if n == 0:
+    #     return 1
+    # elif n < 0:
+    #     return 0
+    # return climbStairs(n - 1) + climbStairs(n - 2)
 
 
 if __name__ == '__main__':
+    print(climbStairs(6))
     l1 = ListNode(5)
     l1.next = ListNode(1)
     l1.next.next = ListNode(2)
@@ -37,7 +59,3 @@ if __name__ == '__main__':
     l1.next.next.next.next.next = ListNode(6)
     l1.next.next.next.next.next.next = ListNode(7)
     l1.next.next.next.next.next.next.next = ListNode(8)
-    l2 = swapPairs(l1)
-    while l2:
-        print(l2.val)
-        l2 = l2.next
