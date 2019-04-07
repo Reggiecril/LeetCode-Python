@@ -11,20 +11,6 @@ class TreeNode(object):
         self.right = None
 
 
-def letterCombinations(digits):
-    """
-    :type digits: str
-    :rtype: List[str]
-    """
-    number = {'0': ' ', '1': '', '2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl', '6': 'mno', '7': 'pqrs', '8': 'tuv',
-              '9': 'wxyz'}
-    if len(digits) == 1:
-        return number[digits]
-    list = []
-    rever(number, digits, 0, '', list)
-    return list
-
-
 def rever(number, digits, count, string, list):
     if count == len(digits):
         return
@@ -35,15 +21,38 @@ def rever(number, digits, count, string, list):
         rever(number, digits, count + 1, string + value, list)
 
 
-def maxDepth(root):
+def generateMatrix(n):
     """
-    :type root: TreeNode
-    :rtype: int
+    :type n: int
+    :rtype: List[List[int]]
     """
-    if root == None:
-        return 0
-
-    return max(maxDepth(root.left),maxDepth(root.right))+1
+    list = [[0 for i in range(n)] for i in range(n)]
+    left = 0
+    right = n
+    top = 0
+    bottom = n
+    count = 0
+    while count<n*n:
+        for i in range(right-left):
+            list[top][left+i] = count + 1
+            count += 1
+        top += 1
+        for i in range(bottom-top):
+            list[top+i][right-1] = count + 1
+            count += 1
+        right -= 1
+        for i in range(right-left):
+            list[bottom-1][right-i-1]=count+1
+            count+=1
+        bottom-=1
+        for i in range(bottom-top):
+            list[bottom-1-i][left]=count+1
+            count+=1
+        left+=1
+    #
+    # n -= 1
+    for i in range(n):
+        print(list[i], '\n')
 
 
 if __name__ == '__main__':
@@ -56,7 +65,7 @@ if __name__ == '__main__':
     # l1.next.next.next.next.next.next = ListNode(7)
     # l1.next.next.next.next.next.next.next = ListNode(8)
 
-    l1 = None
+    # l1 = TreeNode(2)
     # l1.left = TreeNode(2)
     # l1.right = TreeNode(3)
     # l1.right.right = TreeNode(3)
@@ -66,4 +75,4 @@ if __name__ == '__main__':
     l2.right = TreeNode(3)
     l2.right.left = TreeNode(5)
     l2.right.left.left = TreeNode(5)
-    print(maxDepth(l2))
+    print(generateMatrix(10))
