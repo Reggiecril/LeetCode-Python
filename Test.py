@@ -4,6 +4,13 @@ class ListNode(object):
         self.next = None
 
 
+class TreeNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
 def letterCombinations(digits):
     """
     :type digits: str
@@ -28,29 +35,22 @@ def rever(number, digits, count, string, list):
         rever(number, digits, count + 1, string + value, list)
 
 
-def climbStairs(n):
+def isSameTree(p, q):
     """
-    :type n: int
-    :rtype: int
+    :type p: TreeNode
+    :type q: TreeNode
+    :rtype: bool
     """
-    list=[]
-    for i in range(n):
-        if i==0:
-            list.append(1)
-        elif i==1:
-            list.append(2)
-        else:
-            list.append(list[i-1]+list[i-2])
-    return list[n-1]
-    # if n == 0:
-    #     return 1
-    # elif n < 0:
-    #     return 0
-    # return climbStairs(n - 1) + climbStairs(n - 2)
+    if p == None or q == None:
+        return q==p
+    # return p.val == q.val and isSameTree(p.left, q.left) and isSameTree(p.right, q.right)
+    if p.val == q.val:
+        return isSameTree(p.left, q.left) and isSameTree(p.right, q.right)
+    else:
+        return False
 
 
 if __name__ == '__main__':
-    print(climbStairs(6))
     l1 = ListNode(5)
     l1.next = ListNode(1)
     l1.next.next = ListNode(2)
@@ -59,3 +59,11 @@ if __name__ == '__main__':
     l1.next.next.next.next.next = ListNode(6)
     l1.next.next.next.next.next.next = ListNode(7)
     l1.next.next.next.next.next.next.next = ListNode(8)
+
+    l1 = TreeNode(1)
+    l1.left = TreeNode(2)
+    l1.right = TreeNode(3)
+    l2 = TreeNode(1)
+    l2.left = TreeNode(2)
+    l2.right = TreeNode(3)
+    print(isSameTree(l1, l2))
