@@ -35,35 +35,35 @@ def rever(number, digits, count, string, list):
         rever(number, digits, count + 1, string + value, list)
 
 
-def isSameTree(p, q):
+def maxDepth(root):
     """
-    :type p: TreeNode
-    :type q: TreeNode
-    :rtype: bool
+    :type root: TreeNode
+    :rtype: int
     """
-    if p == None or q == None:
-        return q==p
-    # return p.val == q.val and isSameTree(p.left, q.left) and isSameTree(p.right, q.right)
-    if p.val == q.val:
-        return isSameTree(p.left, q.left) and isSameTree(p.right, q.right)
-    else:
-        return False
+    if root == None:
+        return 0
+
+    return max(maxDepth(root.left),maxDepth(root.right))+1
 
 
 if __name__ == '__main__':
-    l1 = ListNode(5)
-    l1.next = ListNode(1)
-    l1.next.next = ListNode(2)
-    l1.next.next.next = ListNode(3)
-    l1.next.next.next.next = ListNode(4)
-    l1.next.next.next.next.next = ListNode(6)
-    l1.next.next.next.next.next.next = ListNode(7)
-    l1.next.next.next.next.next.next.next = ListNode(8)
+    # l1 = ListNode(5)
+    # l1.next = ListNode(1)
+    # l1.next.next = ListNode(2)
+    # l1.next.next.next = ListNode(3)
+    # l1.next.next.next.next = ListNode(4)
+    # l1.next.next.next.next.next = ListNode(6)
+    # l1.next.next.next.next.next.next = ListNode(7)
+    # l1.next.next.next.next.next.next.next = ListNode(8)
 
-    l1 = TreeNode(1)
-    l1.left = TreeNode(2)
-    l1.right = TreeNode(3)
+    l1 = None
+    # l1.left = TreeNode(2)
+    # l1.right = TreeNode(3)
+    # l1.right.right = TreeNode(3)
+    # l1.right.right.right = TreeNode(3)
     l2 = TreeNode(1)
     l2.left = TreeNode(2)
     l2.right = TreeNode(3)
-    print(isSameTree(l1, l2))
+    l2.right.left = TreeNode(5)
+    l2.right.left.left = TreeNode(5)
+    print(maxDepth(l2))
