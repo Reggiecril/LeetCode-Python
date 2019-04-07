@@ -21,38 +21,43 @@ def rever(number, digits, count, string, list):
         rever(number, digits, count + 1, string + value, list)
 
 
-def generateMatrix(n):
+def spiralOrder(matrix):
     """
-    :type n: int
-    :rtype: List[List[int]]
+    :type matrix: List[List[int]]
+    :rtype: List[int]
     """
-    list = [[0 for i in range(n)] for i in range(n)]
-    left = 0
-    right = n
-    top = 0
-    bottom = n
-    count = 0
-    while count<n*n:
+    if matrix==None or len(matrix)==0:
+        return matrix
+    list=[]
+
+    left=0
+    right=len(matrix[0])
+    top=0
+    bottom=len(matrix)
+    count=right*bottom
+    while True:
         for i in range(right-left):
-            list[top][left+i] = count + 1
-            count += 1
+            list.append(matrix[top][left+i])
+            count-=1
         top += 1
+        if count<=0:break
         for i in range(bottom-top):
-            list[top+i][right-1] = count + 1
-            count += 1
+            list.append(matrix[top+i][right-1])
+            count-=1
         right -= 1
+        if count <= 0: break
         for i in range(right-left):
-            list[bottom-1][right-i-1]=count+1
-            count+=1
+            list.append(matrix[bottom-1][right-i-1])
+            count-=1
         bottom-=1
+        if count <= 0: break
         for i in range(bottom-top):
-            list[bottom-1-i][left]=count+1
-            count+=1
+            list.append(matrix[bottom-1-i][left])
+            count-=1
         left+=1
-    #
-    # n -= 1
-    for i in range(n):
-        print(list[i], '\n')
+        if count <= 0: break
+    return list
+
 
 
 if __name__ == '__main__':
@@ -75,4 +80,5 @@ if __name__ == '__main__':
     l2.right = TreeNode(3)
     l2.right.left = TreeNode(5)
     l2.right.left.left = TreeNode(5)
-    print(generateMatrix(10))
+    print(spiralOrder([
+]))
