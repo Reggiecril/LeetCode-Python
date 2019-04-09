@@ -485,3 +485,10 @@ def spiralOrder(matrix):
     
 
 ```
+***
+##### 54. Spiral Matrix
+
+```python
+    def singleNumber(nums):
+        return sum(set(nums))*2-sum(nums)
+```
