@@ -21,44 +21,56 @@ def rever(number, digits, count, string, list):
         rever(number, digits, count + 1, string + value, list)
 
 
-def spiralOrder(matrix):
+def combinationSum(candidates, target):
     """
-    :type matrix: List[List[int]]
-    :rtype: List[int]
+    :type candidates: List[int]
+    :type target: int
+    :rtype: List[List[int]]
     """
-    if matrix==None or len(matrix)==0:
-        return matrix
-    list=[]
-
-    left=0
-    right=len(matrix[0])
-    top=0
-    bottom=len(matrix)
-    count=right*bottom
-    while True:
-        for i in range(right-left):
-            list.append(matrix[top][left+i])
-            count-=1
-        top += 1
-        if count<=0:break
-        for i in range(bottom-top):
-            list.append(matrix[top+i][right-1])
-            count-=1
-        right -= 1
-        if count <= 0: break
-        for i in range(right-left):
-            list.append(matrix[bottom-1][right-i-1])
-            count-=1
-        bottom-=1
-        if count <= 0: break
-        for i in range(bottom-top):
-            list.append(matrix[bottom-1-i][left])
-            count-=1
-        left+=1
-        if count <= 0: break
-    return list
+    in_list = []
+    out_list = []
+    count = 0
+    getSum(sorted(candidates), target, in_list, out_list)
+    return out_list
 
 
+def getSum(candidates, target, in_list, out_list):
+    if target == 0:
+        out_list.append(in_list.copy())
+        return
+    for i in candidates:
+        if target<i:
+            break
+        if in_list and in_list[-1]>i:continue
+        else:
+            in_list.append(i)
+            getSum(candidates, target-i, in_list, out_list)
+            in_list.pop()
+# def combinationSum(candidates, target):
+#     """
+#     :type candidates: List[int]
+#     :type target: int
+#     :rtype: List[List[int]]
+#     """
+#     in_list = []
+#     out_list = []
+#     count = 0
+#     getSum(candidates, target, in_list, out_list, count)
+#     return out_list
+#
+#
+# def getSum(candidates, target, in_list, out_list, count):
+#     while count < len(candidates):
+#         if target < 0:
+#             return
+#         elif target == 0 and in_list not in out_list:
+#             out_list.append(in_list.copy())
+#             return
+#         else:
+#             in_list.append(candidates[count])
+#             getSum(candidates, target-candidates[count], in_list, out_list, count)
+#             in_list.pop()
+#             count += 1
 
 if __name__ == '__main__':
     # l1 = ListNode(5)
@@ -80,5 +92,4 @@ if __name__ == '__main__':
     l2.right = TreeNode(3)
     l2.right.left = TreeNode(5)
     l2.right.left.left = TreeNode(5)
-    print(spiralOrder([
-]))
+    print(combinationSum([2,3,6,7],7))
