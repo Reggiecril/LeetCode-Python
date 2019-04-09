@@ -427,7 +427,7 @@ def spiralOrder(matrix):
 ```
 
 ***
-##### 54. Spiral Matrix
+##### 39. Combination Sum
 
 ```python
     
