@@ -20,10 +20,23 @@ def rever(number, digits, count, string, list):
     for value in number[digits[count]].split():
         rever(number, digits, count + 1, string + value, list)
 
-def singleNumber(nums):
-    return sum(set(nums))*2-sum(nums)
+
+def canJump(nums):
+    if len(nums)<=1:
+        return True
+    length = len(nums) - 1
+    count = nums[0]
+    ptr = 0
+    while count >= ptr and ptr <= length:
+        count = max(count, nums[ptr] + ptr)
+        if count>=length:
+            break
+        ptr += 1
+    return count >= length
+
 
 if __name__ == '__main__':
+    print(canJump([3, 2, 1, 0, 4]))
     # l1 = ListNode(5)
     # l1.next = ListNode(1)
     # l1.next.next = ListNode(2)
@@ -43,4 +56,3 @@ if __name__ == '__main__':
     l2.right = TreeNode(3)
     l2.right.left = TreeNode(5)
     l2.right.left.left = TreeNode(5)
-    print(singleNumber([4,1,2,1,2]))

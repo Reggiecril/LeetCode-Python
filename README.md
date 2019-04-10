@@ -486,9 +486,27 @@ def spiralOrder(matrix):
 
 ```
 ***
-##### 54. Spiral Matrix
+##### 136. Single Number
 
 ```python
     def singleNumber(nums):
         return sum(set(nums))*2-sum(nums)
+```
+***
+##### 55. Jump Game
+
+```python
+    
+    def canJump(nums):
+        if len(nums)<=1:
+            return True
+        length = len(nums) - 1
+        count = nums[0]
+        ptr = 0
+        while count >= ptr and ptr <= length:
+            count = max(count, nums[ptr] + ptr)
+            if count>=length:
+                break
+            ptr += 1
+        return count >= length
 ```
