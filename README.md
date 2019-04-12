@@ -602,3 +602,16 @@ def spiralOrder(matrix):
         return obstacleGrid[-1][-1]
 
 ```
+
+***
+##### 58. Length of Last Word
+
+
+```python
+
+    def lengthOfLastWord(s: str) -> int:
+        if len(s.strip())==0:
+            return 0
+        return s.strip().split(" ")[-1]
+
+```

@@ -1,5 +1,3 @@
-
-
 class ListNode(object):
     def __init__(self, x):
         self.val = x
@@ -50,7 +48,7 @@ def uniquePathsWithObstacles(obstacleGrid) -> int:
             value = 0
         obstacleGrid[0][i] = value
     value = 1
-    for i in range(1,n):
+    for i in range(1, n):
         if obstacleGrid[i][0] == 1:
             value = 0
         obstacleGrid[i][0] = value
@@ -63,12 +61,21 @@ def uniquePathsWithObstacles(obstacleGrid) -> int:
 
     return obstacleGrid[-1][-1]
 
+
+def lengthOfLastWord(s: str) -> int:
+    if len(s.strip())==0:
+        return 0
+    return s.strip().split(" ")[-1]
+
+
 if __name__ == '__main__':
-    print(uniquePathsWithObstacles([
-  [0,0,0],
-  [0,1,0],
-  [0,0,0]
-]))
+    #     print(uniquePathsWithObstacles([
+    #   [0,0,0],
+    #   [0,1,0],
+    #   [0,0,0]
+    # ]))
+    str = 'Hello World!'
+    print(lengthOfLastWord(str))
     l1 = ListNode(0)
     l1.next = ListNode(1)
     l1.next.next = ListNode(2)
