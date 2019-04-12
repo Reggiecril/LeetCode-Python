@@ -1,3 +1,5 @@
+
+
 class ListNode(object):
     def __init__(self, x):
         self.val = x
@@ -39,19 +41,34 @@ class TreeNode(object):
 #         in_list.pop()
 #     return
 
-def uniquePaths(m: int, n: int) -> int:
-    grid = [[0 for i in range(m)] for j in range(n)]
+def uniquePathsWithObstacles(obstacleGrid) -> int:
+    m = len(obstacleGrid[0])
+    n = len(obstacleGrid)
+    value = 1
     for i in range(m):
-        grid[0][i] = 1
-    for i in range(n):
-        grid[i][0] = 1
-    for i in range(1, n):
-        for j in range(1, m):
-            grid[i][j] = grid[i - 1][j] + grid[i][j - 1]
-    return grid[n - 1][m - 1]
+        if obstacleGrid[0][i] == 1:
+            value = 0
+        obstacleGrid[0][i] = value
+    value = 1
+    for i in range(1,n):
+        if obstacleGrid[i][0] == 1:
+            value = 0
+        obstacleGrid[i][0] = value
+    for i in range(1, m):
+        for j in range(1, n):
+            if obstacleGrid[j][i] == 1:
+                obstacleGrid[j][i] = 0
+            else:
+                obstacleGrid[j][i] = obstacleGrid[j - 1][i] + obstacleGrid[j][i - 1]
+
+    return obstacleGrid[-1][-1]
 
 if __name__ == '__main__':
-    print(uniquePaths(4,3))
+    print(uniquePathsWithObstacles([
+  [0,0,0],
+  [0,1,0],
+  [0,0,0]
+]))
     l1 = ListNode(0)
     l1.next = ListNode(1)
     l1.next.next = ListNode(2)
