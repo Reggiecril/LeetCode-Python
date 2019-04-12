@@ -39,25 +39,19 @@ class TreeNode(object):
 #         in_list.pop()
 #     return
 
-def rotateRight(head, k):
-    l3 = head
-    length = 1
-    while l3.next:
-        length += 1
-        l3 = l3.next
-    k %= length
-    if k == 0:
-        return head
-    l3.next=head
-    l2=head
-    for i in range(k):
-        l2=l2.next
-        l3=l3.next
-    l3.next=None
-    return l2
-
+def uniquePaths(m: int, n: int) -> int:
+    grid = [[0 for i in range(m)] for j in range(n)]
+    for i in range(m):
+        grid[0][i] = 1
+    for i in range(n):
+        grid[i][0] = 1
+    for i in range(1, n):
+        for j in range(1, m):
+            grid[i][j] = grid[i - 1][j] + grid[i][j - 1]
+    return grid[n - 1][m - 1]
 
 if __name__ == '__main__':
+    print(uniquePaths(4,3))
     l1 = ListNode(0)
     l1.next = ListNode(1)
     l1.next.next = ListNode(2)
@@ -67,11 +61,11 @@ if __name__ == '__main__':
     l1.next.next.next.next.next.next = ListNode(7)
     l1.next.next.next.next.next.next.next = ListNode(8)
     #
-    l3=ListNode(0)
-    l3.next=rotateRight(l1,2)
-    while l3:
-        print(l3.val)
-        l3=l3.next
+    # l3=ListNode(0)
+    # l3.next=rotateRight(l1,2)
+    # while l3:
+    #     print(l3.val)
+    #     l3=l3.next
 
     # l1 = TreeNode(2)
     # l1.left = TreeNode(2)
