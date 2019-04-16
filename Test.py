@@ -39,33 +39,23 @@ class TreeNode(object):
 #         in_list.pop()
 #     return
 
-def uniquePathsWithObstacles(obstacleGrid) -> int:
-    m = len(obstacleGrid[0])
-    n = len(obstacleGrid)
-    value = 1
-    for i in range(m):
-        if obstacleGrid[0][i] == 1:
-            value = 0
-        obstacleGrid[0][i] = value
-    value = 1
-    for i in range(1, n):
-        if obstacleGrid[i][0] == 1:
-            value = 0
-        obstacleGrid[i][0] = value
-    for i in range(1, m):
-        for j in range(1, n):
-            if obstacleGrid[j][i] == 1:
-                obstacleGrid[j][i] = 0
-            else:
-                obstacleGrid[j][i] = obstacleGrid[j - 1][i] + obstacleGrid[j][i - 1]
 
-    return obstacleGrid[-1][-1]
+def getPermutation(n: int, k: int) -> str:
+    string = ''
+    permutation(list(range(1, n+1)), n,k, string)
+    return string
 
 
-def lengthOfLastWord(s: str) -> int:
-    if len(s.strip())==0:
-        return 0
-    return s.strip().split(" ")[-1]
+def permutation(n, length,k, string):
+    if len(string) == length:
+        k -= 1
+    if k == 0:
+        return
+    for i in n:
+        string = string + i.__str__()
+        other_n = n.copy()
+        other_n.remove(i)
+        permutation(other_n, length,k, string)
 
 
 if __name__ == '__main__':
@@ -74,8 +64,7 @@ if __name__ == '__main__':
     #   [0,1,0],
     #   [0,0,0]
     # ]))
-    str = 'Hello World!'
-    print(lengthOfLastWord(str))
+    print(getPermutation(4, 3))
     l1 = ListNode(0)
     l1.next = ListNode(1)
     l1.next.next = ListNode(2)
