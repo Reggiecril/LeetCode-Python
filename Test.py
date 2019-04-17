@@ -39,23 +39,18 @@ class TreeNode(object):
 #         in_list.pop()
 #     return
 
+def isSymmetric(root: TreeNode) -> bool:
+    if root == None:
+        return True
+    return symmetric(root.left, root.right)
 
-def getPermutation(n: int, k: int) -> str:
-    string = ''
-    permutation(list(range(1, n+1)), n,k, string)
-    return string
 
-
-def permutation(n, length,k, string):
-    if len(string) == length:
-        k -= 1
-    if k == 0:
-        return
-    for i in n:
-        string = string + i.__str__()
-        other_n = n.copy()
-        other_n.remove(i)
-        permutation(other_n, length,k, string)
+def symmetric(leftNode: TreeNode, rightNode: TreeNode):
+    if leftNode == None or rightNode == None:
+        return leftNode==rightNode
+    if leftNode.val != rightNode.val:
+        return False
+    return symmetric(leftNode.left, rightNode.right) and symmetric(leftNode.right, rightNode.left)
 
 
 if __name__ == '__main__':
@@ -64,7 +59,7 @@ if __name__ == '__main__':
     #   [0,1,0],
     #   [0,0,0]
     # ]))
-    print(getPermutation(4, 3))
+
     l1 = ListNode(0)
     l1.next = ListNode(1)
     l1.next.next = ListNode(2)
@@ -80,11 +75,14 @@ if __name__ == '__main__':
     #     print(l3.val)
     #     l3=l3.next
 
-    # l1 = TreeNode(2)
-    # l1.left = TreeNode(2)
-    # l1.right = TreeNode(3)
-    # l1.right.right = TreeNode(3)
-    # # l1.right.right.right = TreeNode(3)
+    l1 = TreeNode(1)
+    l1.left = TreeNode(2)
+    l1.right = TreeNode(2)
+    l1.right.left = TreeNode(3)
+    l1.right.right = TreeNode(4)
+    l1.left.left = TreeNode(4)
+    l1.left.right = TreeNode(3)
+    print(isSymmetric(l1))
     # l2 = TreeNode(1)
     # l2.left = TreeNode(2)
     # l2.right = TreeNode(3)
