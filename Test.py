@@ -47,11 +47,23 @@ def isSymmetric(root: TreeNode) -> bool:
 
 def symmetric(leftNode: TreeNode, rightNode: TreeNode):
     if leftNode == None or rightNode == None:
-        return leftNode==rightNode
+        return leftNode == rightNode
     if leftNode.val != rightNode.val:
         return False
     return symmetric(leftNode.left, rightNode.right) and symmetric(leftNode.right, rightNode.left)
 
+
+def longestPalindrome(s):
+    """
+    :type s: str
+    :rtype: str
+    """
+    for i in range(len(s),0,-1):
+        for j in range(len(s)-i):
+            res=s[j:i+j]
+            if res==res[::-1]:
+                return res
+    return ""
 
 if __name__ == '__main__':
     #     print(uniquePathsWithObstacles([
@@ -59,7 +71,7 @@ if __name__ == '__main__':
     #   [0,1,0],
     #   [0,0,0]
     # ]))
-
+    print(longestPalindrome("bababababababababababadas"))
     l1 = ListNode(0)
     l1.next = ListNode(1)
     l1.next.next = ListNode(2)
@@ -82,9 +94,9 @@ if __name__ == '__main__':
     l1.right.right = TreeNode(4)
     l1.left.left = TreeNode(4)
     l1.left.right = TreeNode(3)
-    print(isSymmetric(l1))
     # l2 = TreeNode(1)
     # l2.left = TreeNode(2)
     # l2.right = TreeNode(3)
     # l2.right.left = TreeNode(5)
     # l2.right.left.left = TreeNode(5)
+
