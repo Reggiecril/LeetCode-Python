@@ -710,3 +710,49 @@ def spiralOrder(matrix):
         return ""
 
 ```
+***
+##### 20. Valid Parentheses
+
+```python
+    def isValid(s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        
+        # 50%
+        # if s=='' or len(s)==0:
+        #     return True;
+        # l=[]
+        # count=0
+        # while count<len(s):
+        #     if s[count]=='(' or s[count]=='[' or s[count]=='{':
+        #         l.append(s[count])
+        #     else:
+        #         if len(l)==0:
+        #             return False
+        #         else:
+        #             first=l[-1]
+        #             second=s[count]
+        #             if first=='(' and second==')' or first=='[' and second==']' or first=='{' and second=='}':
+        #                 l.pop(-1)
+        #             else:
+        #                 return False
+        #     count+=1
+        # return len(l)==0
+        # 100%
+        stack = []
+        for ch in s:
+            if ch == "(":
+                stack.append(")")
+            elif ch == "{":
+                stack.append("}")
+            elif ch == "[":
+                stack.append("]")
+            else:
+                if not stack: return False
+                if stack[-1] != ch: return False
+                stack.pop()
+        return len(stack) == 0
+
+```

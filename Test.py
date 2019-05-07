@@ -53,17 +53,49 @@ def symmetric(leftNode: TreeNode, rightNode: TreeNode):
     return symmetric(leftNode.left, rightNode.right) and symmetric(leftNode.right, rightNode.left)
 
 
-def longestPalindrome(s):
+def isValid(s):
     """
     :type s: str
-    :rtype: str
+    :rtype: bool
     """
-    for i in range(len(s),0,-1):
-        for j in range(len(s)-i):
-            res=s[j:i+j]
-            if res==res[::-1]:
-                return res
-    return ""
+    # 50%
+    # if s=='' or len(s)==0:
+    #     return True;
+    # l=[]
+    # count=0
+    # while count<len(s):
+    #     if s[count]=='(' or s[count]=='[' or s[count]=='{':
+    #         l.append(s[count])
+    #     else:
+    #         if len(l)==0:
+    #             return False
+    #         else:
+    #             first=l[-1]
+    #             second=s[count]
+    #             if first=='(' and second==')' or first=='[' and second==']' or first=='{' and second=='}':
+    #                 l.pop(-1)
+    #             else:
+    #                 return False
+    #     count+=1
+    # return len(l)==0
+    # 100%
+    stack = []
+    for ch in s:
+        if ch == "(":
+            stack.append(")")
+        elif ch == "{":
+            stack.append("}")
+        elif ch == "[":
+            stack.append("]")
+        else:
+            if not stack: return False
+            if stack[-1] != ch: return False
+            stack.pop()
+    return len(stack) == 0
+
+
+
+
 
 if __name__ == '__main__':
     #     print(uniquePathsWithObstacles([
@@ -71,7 +103,7 @@ if __name__ == '__main__':
     #   [0,1,0],
     #   [0,0,0]
     # ]))
-    print(longestPalindrome("bababababababababababadas"))
+    print(isValid("()[]{}"))
     l1 = ListNode(0)
     l1.next = ListNode(1)
     l1.next.next = ListNode(2)
