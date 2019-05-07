@@ -1,3 +1,6 @@
+from _ast import List
+
+
 class ListNode(object):
     def __init__(self, x):
         self.val = x
@@ -21,22 +24,22 @@ class TreeNode(object):
 #         rever(number, digits, count + 1, string + value, list)
 #
 
-def permute(nums):
-    out_list = []
-    permuteCalculation([], out_list, nums, 0, len(nums))
-    return out_list
+def permuteUnique(nums):
+    list = []
+    permuteCal(nums, list, [],len(nums))
+    return list
 
 
-def permuteCalculation(in_list, out_list, nums, count, length):
-    if count == length:
-        out_list.append(in_list.copy())
+def permuteCal(nums, list, num_list,length):
+    if len(num_list) == length and num_list not in list:
+        list.append(num_list.copy())
         return
-    for i in nums:
-        in_list.append(i)
-        new_num=nums.copy()
-        new_num.remove(i)
-        permuteCalculation(in_list, out_list, new_num, count+1, length)
-        in_list.pop(-1)
+    for i in range(len(nums)):
+        num_list.append(nums[i])
+        new_num = nums.copy()
+        new_num.pop(i)
+        permuteCal(new_num, list, num_list,length)
+        num_list.pop(-1)
     return
 
 
@@ -46,7 +49,7 @@ if __name__ == '__main__':
     #   [0,1,0],
     #   [0,0,0]
     # ]))
-    print(permute([1,2,3,4]))
+    print(permuteUnique([1, 1,1,2]))
     l1 = ListNode(0)
     l1.next = ListNode(1)
     l1.next.next = ListNode(2)
