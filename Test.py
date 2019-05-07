@@ -103,7 +103,16 @@ if __name__ == '__main__':
     #   [0,1,0],
     #   [0,0,0]
     # ]))
-    print(isValid("()[]{}"))
+    strs=["flower","flow","flight"]
+    maxs = max(strs)
+    mins = min(strs)
+    s=""
+    for i in range(len(mins)):
+        if mins[i]==maxs[i]:
+            s+=mins[i]
+        else:
+            break
+    print(s)
     l1 = ListNode(0)
     l1.next = ListNode(1)
     l1.next.next = ListNode(2)
