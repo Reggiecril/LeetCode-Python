@@ -21,80 +21,23 @@ class TreeNode(object):
 #         rever(number, digits, count + 1, string + value, list)
 #
 
-# def permute( nums):
-#     out_list = []
-#     permuteCalculation([], out_list, nums, 0, len(nums))
-#     return out_list
-#
-#
-# def permuteCalculation(in_list, out_list, nums, count, length):
-#     if count == length:
-#         out_list.append(in_list.copy())
-#         return
-#     for i in nums:
-#         in_list.append(i)
-#         new_num=nums.copy()
-#         new_num.remove(i)
-#         permuteCalculation(in_list, out_list, new_num, count+1, length)
-#         in_list.pop()
-#     return
-
-def isSymmetric(root: TreeNode) -> bool:
-    if root == None:
-        return True
-    return symmetric(root.left, root.right)
+def permute(nums):
+    out_list = []
+    permuteCalculation([], out_list, nums, 0, len(nums))
+    return out_list
 
 
-def symmetric(leftNode: TreeNode, rightNode: TreeNode):
-    if leftNode == None or rightNode == None:
-        return leftNode == rightNode
-    if leftNode.val != rightNode.val:
-        return False
-    return symmetric(leftNode.left, rightNode.right) and symmetric(leftNode.right, rightNode.left)
-
-
-def isValid(s):
-    """
-    :type s: str
-    :rtype: bool
-    """
-    # 50%
-    # if s=='' or len(s)==0:
-    #     return True;
-    # l=[]
-    # count=0
-    # while count<len(s):
-    #     if s[count]=='(' or s[count]=='[' or s[count]=='{':
-    #         l.append(s[count])
-    #     else:
-    #         if len(l)==0:
-    #             return False
-    #         else:
-    #             first=l[-1]
-    #             second=s[count]
-    #             if first=='(' and second==')' or first=='[' and second==']' or first=='{' and second=='}':
-    #                 l.pop(-1)
-    #             else:
-    #                 return False
-    #     count+=1
-    # return len(l)==0
-    # 100%
-    stack = []
-    for ch in s:
-        if ch == "(":
-            stack.append(")")
-        elif ch == "{":
-            stack.append("}")
-        elif ch == "[":
-            stack.append("]")
-        else:
-            if not stack: return False
-            if stack[-1] != ch: return False
-            stack.pop()
-    return len(stack) == 0
-
-
-
+def permuteCalculation(in_list, out_list, nums, count, length):
+    if count == length:
+        out_list.append(in_list.copy())
+        return
+    for i in nums:
+        in_list.append(i)
+        new_num=nums.copy()
+        new_num.remove(i)
+        permuteCalculation(in_list, out_list, new_num, count+1, length)
+        in_list.pop(-1)
+    return
 
 
 if __name__ == '__main__':
@@ -103,16 +46,7 @@ if __name__ == '__main__':
     #   [0,1,0],
     #   [0,0,0]
     # ]))
-    strs=["flower","flow","flight"]
-    maxs = max(strs)
-    mins = min(strs)
-    s=""
-    for i in range(len(mins)):
-        if mins[i]==maxs[i]:
-            s+=mins[i]
-        else:
-            break
-    print(s)
+    print(permute([1,2,3,4]))
     l1 = ListNode(0)
     l1.next = ListNode(1)
     l1.next.next = ListNode(2)
@@ -140,4 +74,3 @@ if __name__ == '__main__':
     # l2.right = TreeNode(3)
     # l2.right.left = TreeNode(5)
     # l2.right.left.left = TreeNode(5)
-
