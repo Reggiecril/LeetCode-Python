@@ -858,3 +858,24 @@ def spiralOrder(matrix):
         return abs(left_dept - right_dept) < 2,max(left_dept,right_dept)+1
 
 ```
+
+***
+##### 83. Remove Duplicates from Sorted List
+
+```python
+
+    #99.98%
+    def deleteDuplicates(head: ListNode) -> ListNode:
+    if not head or not head.next:
+        return head
+    cur=head
+
+    while cur.next:
+        pre = cur.next
+        if cur.val==pre.val:
+            pre=pre.next
+            cur.next=pre
+        if cur.next and pre.val!=cur.val:
+            cur=cur.next
+    return head
+```

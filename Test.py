@@ -1,4 +1,3 @@
-from _ast import List
 
 
 class ListNode(object):
@@ -24,41 +23,37 @@ class TreeNode(object):
 #         rever(number, digits, count + 1, string + value, list)
 #
 
-def permuteUnique(nums):
-    list = []
-    permuteCal(nums, list, [],len(nums))
-    return list
+def deleteDuplicates(head: ListNode) -> ListNode:
+    if not head or not head.next:
+        return head
+    cur=head
 
-
-def permuteCal(nums, list, num_list,length):
-    if len(num_list) == length and num_list not in list:
-        list.append(num_list.copy())
-        return
-    for i in range(len(nums)):
-        num_list.append(nums[i])
-        new_num = nums.copy()
-        new_num.pop(i)
-        permuteCal(new_num, list, num_list,length)
-        num_list.pop(-1)
-    return
-
-
+    while cur.next:
+        pre = cur.next
+        if cur.val==pre.val:
+            pre=pre.next
+            cur.next=pre
+        if cur.next and pre.val!=cur.val:
+            cur=cur.next
+    return head
 if __name__ == '__main__':
     #     print(uniquePathsWithObstacles([
     #   [0,0,0],
     #   [0,1,0],
     #   [0,0,0]
     # ]))
-    print(permuteUnique([1, 1,1,2]))
-    l1 = ListNode(0)
+    l1 = ListNode(1)
     l1.next = ListNode(1)
-    l1.next.next = ListNode(2)
-    l1.next.next.next = ListNode(3)
-    l1.next.next.next.next = ListNode(4)
+    l1.next.next = ListNode(1)
+    l1.next.next.next = ListNode(1)
+    l1.next.next.next.next = ListNode(1)
     l1.next.next.next.next.next = ListNode(6)
     l1.next.next.next.next.next.next = ListNode(7)
     l1.next.next.next.next.next.next.next = ListNode(8)
-    #
+    l1=deleteDuplicates(l1)
+    while l1:
+        print(l1.val)
+        l1=l1.next
     # l3=ListNode(0)
     # l3.next=rotateRight(l1,2)
     # while l3:
