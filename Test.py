@@ -1,5 +1,3 @@
-
-
 class ListNode(object):
     def __init__(self, x):
         self.val = x
@@ -23,19 +21,22 @@ class TreeNode(object):
 #         rever(number, digits, count + 1, string + value, list)
 #
 
-def deleteDuplicates(head: ListNode) -> ListNode:
-    if not head or not head.next:
-        return head
-    cur=head
+def addBinary(a: str, b: str) -> str:
+    s=""
+    count = 0
+    i = len(a) - 1
+    j = len(b) - 1
+    while count >=1 or i >= 0 or j >= 0:
+        count += int(a[i]) if i >= 0 else 0
+        i -= 1
+        count += int(b[j]) if j >= 0 else 0
+        j -= 1
+        s=str(int(count%2))+s
+        count/=2
 
-    while cur.next:
-        pre = cur.next
-        if cur.val==pre.val:
-            pre=pre.next
-            cur.next=pre
-        if cur.next and pre.val!=cur.val:
-            cur=cur.next
-    return head
+    return s
+
+
 if __name__ == '__main__':
     #     print(uniquePathsWithObstacles([
     #   [0,0,0],
@@ -50,10 +51,7 @@ if __name__ == '__main__':
     l1.next.next.next.next.next = ListNode(6)
     l1.next.next.next.next.next.next = ListNode(7)
     l1.next.next.next.next.next.next.next = ListNode(8)
-    l1=deleteDuplicates(l1)
-    while l1:
-        print(l1.val)
-        l1=l1.next
+    print(addBinary("1010", "1011"))
     # l3=ListNode(0)
     # l3.next=rotateRight(l1,2)
     # while l3:
