@@ -21,35 +21,13 @@ class TreeNode(object):
 #         rever(number, digits, count + 1, string + value, list)
 #
 
-def addBinary(a: str, b: str) -> str:
-    s = ""
-    count = 0
-    i = len(a) - 1
-    j = len(b) - 1
-    while count >= 1 or i >= 0 or j >= 0:
-        count += int(a[i]) if i >= 0 else 0
-        i -= 1
-        count += int(b[j]) if j >= 0 else 0
-        j -= 1
-        s = str(int(count % 2)) + s
-        count /= 2
-
-    return s
-
-
-def convert(s: str, numRows: int):
-    if s == "" or numRows==1:
-        return s
-    l = ['']*numRows
-    index, step = 0, 1
-    for i in s:
-        l[index] += i
-        if index == 0:
-            step = 1
-        elif index == numRows - 1:
-            step = -1
-        index += step
-    return "".join(l)
+def strStr(haystack: str, needle: str) -> int:
+    if haystack == "" or len(haystack) == 0 or needle == "" or len(needle) == 0:
+        return -1
+    for i in range(len(haystack)-len(needle)+1):
+        if haystack[i:len(needle)+i]==needle:
+            return i
+    return -1
 
 if __name__ == '__main__':
     #     print(uniquePathsWithObstacles([
@@ -66,7 +44,7 @@ if __name__ == '__main__':
     l1.next.next.next.next.next = ListNode(6)
     l1.next.next.next.next.next.next = ListNode(7)
     l1.next.next.next.next.next.next.next = ListNode(8)
-    print(convert("PAYPALISHIRING", 1))
+    print(strStr("aaab","ab"))
     # l3=ListNode(0)
     # l3.next=rotateRight(l1,2)
     # while l3:
