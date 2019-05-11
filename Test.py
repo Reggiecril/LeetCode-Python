@@ -21,18 +21,28 @@ class TreeNode(object):
 #         rever(number, digits, count + 1, string + value, list)
 #
 
-def mySqrt(self, x: int) -> int:
-    left = 0
-    right = x
-    while left <= right:
-        mid = int(left + (right - left) / 2)
-        if mid * mid <= x < (mid + 1) * (mid + 1):
-            return mid
-        elif mid * mid > x:
-            right = mid
-        else:
-            left = mid + 1
-    return mid
+def pathSum(root: TreeNode, sum: int):
+    all_list = []
+    if not root:
+        return list(all_list)
+    suma(root, all_list, [], sum)
+    return all_list
+
+
+def suma(node, all_list, this_list, sum):
+    if not node:
+        return
+    if sum - node.val == 0 and not node.left and not node.right:
+        this_list.append(node.val)
+        all_list.append(this_list.copy())
+        this_list.pop()
+        return
+    else:
+        this_list.append(node.val)
+        suma(node.left, all_list, this_list, sum - node.val)
+        suma(node.right, all_list, this_list, sum - node.val)
+        this_list.pop()
+        return
 
 if __name__ == '__main__':
     #     print(uniquePathsWithObstacles([
@@ -49,7 +59,11 @@ if __name__ == '__main__':
     l1.next.next.next.next.next = ListNode(6)
     l1.next.next.next.next.next.next = ListNode(7)
     l1.next.next.next.next.next.next.next = ListNode(8)
-    print(strStr("aaab","ab"))
+
+    l2=TreeNode(-2)
+    l2.right=TreeNode(-3)
+
+    pathSum(l2,-5)
     # l3=ListNode(0)
     # l3.next=rotateRight(l1,2)
     # while l3:
