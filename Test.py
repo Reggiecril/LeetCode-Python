@@ -21,13 +21,18 @@ class TreeNode(object):
 #         rever(number, digits, count + 1, string + value, list)
 #
 
-def strStr(haystack: str, needle: str) -> int:
-    if haystack == "" or len(haystack) == 0 or needle == "" or len(needle) == 0:
-        return -1
-    for i in range(len(haystack)-len(needle)+1):
-        if haystack[i:len(needle)+i]==needle:
-            return i
-    return -1
+def mySqrt(self, x: int) -> int:
+    left = 0
+    right = x
+    while left <= right:
+        mid = int(left + (right - left) / 2)
+        if mid * mid <= x < (mid + 1) * (mid + 1):
+            return mid
+        elif mid * mid > x:
+            right = mid
+        else:
+            left = mid + 1
+    return mid
 
 if __name__ == '__main__':
     #     print(uniquePathsWithObstacles([
