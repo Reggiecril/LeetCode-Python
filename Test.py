@@ -22,20 +22,34 @@ class TreeNode(object):
 #
 
 def addBinary(a: str, b: str) -> str:
-    s=""
+    s = ""
     count = 0
     i = len(a) - 1
     j = len(b) - 1
-    while count >=1 or i >= 0 or j >= 0:
+    while count >= 1 or i >= 0 or j >= 0:
         count += int(a[i]) if i >= 0 else 0
         i -= 1
         count += int(b[j]) if j >= 0 else 0
         j -= 1
-        s=str(int(count%2))+s
-        count/=2
+        s = str(int(count % 2)) + s
+        count /= 2
 
     return s
 
+
+def convert(s: str, numRows: int):
+    if s == "" or numRows==1:
+        return s
+    l = ['']*numRows
+    index, step = 0, 1
+    for i in s:
+        l[index] += i
+        if index == 0:
+            step = 1
+        elif index == numRows - 1:
+            step = -1
+        index += step
+    return "".join(l)
 
 if __name__ == '__main__':
     #     print(uniquePathsWithObstacles([
@@ -43,6 +57,7 @@ if __name__ == '__main__':
     #   [0,1,0],
     #   [0,0,0]
     # ]))
+
     l1 = ListNode(1)
     l1.next = ListNode(1)
     l1.next.next = ListNode(1)
@@ -51,7 +66,7 @@ if __name__ == '__main__':
     l1.next.next.next.next.next = ListNode(6)
     l1.next.next.next.next.next.next = ListNode(7)
     l1.next.next.next.next.next.next.next = ListNode(8)
-    print(addBinary("1010", "1011"))
+    print(convert("PAYPALISHIRING", 1))
     # l3=ListNode(0)
     # l3.next=rotateRight(l1,2)
     # while l3:
