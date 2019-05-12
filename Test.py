@@ -21,28 +21,29 @@ class TreeNode(object):
 #         rever(number, digits, count + 1, string + value, list)
 #
 
-def pathSum(root: TreeNode, sum: int):
-    all_list = []
-    if not root:
-        return list(all_list)
-    suma(root, all_list, [], sum)
-    return all_list
+def myAtoi(str: str) -> int:
+    if not str or len(str.lstrip())==0 or len(str)==0:
+        return 0
+    str = str.lstrip()
+    minus = 1
+    if str[0] == "-":
+        str = str.replace("-", "", 1)
+        minus = -1
+    elif str[0] == "+":
+        str = str.replace("+", "", 1)
 
+        minus = 1
+    dig=0
+    for i in str:
+        if not i.isdigit():
+            return dig*minus
+        dig=dig*10+int(i)
+        if minus==1 and dig>2147483647:
+            return 2147483647
+        elif minus==-1 and dig>2147483648:
+            return -2147483648
+    return dig*minus
 
-def suma(node, all_list, this_list, sum):
-    if not node:
-        return
-    if sum - node.val == 0 and not node.left and not node.right:
-        this_list.append(node.val)
-        all_list.append(this_list.copy())
-        this_list.pop()
-        return
-    else:
-        this_list.append(node.val)
-        suma(node.left, all_list, this_list, sum - node.val)
-        suma(node.right, all_list, this_list, sum - node.val)
-        this_list.pop()
-        return
 
 if __name__ == '__main__':
     #     print(uniquePathsWithObstacles([
@@ -50,7 +51,8 @@ if __name__ == '__main__':
     #   [0,1,0],
     #   [0,0,0]
     # ]))
-
+    l = [-1, -2, -3, -4]
+    print(myAtoi("+1"))
     l1 = ListNode(1)
     l1.next = ListNode(1)
     l1.next.next = ListNode(1)
@@ -60,10 +62,9 @@ if __name__ == '__main__':
     l1.next.next.next.next.next.next = ListNode(7)
     l1.next.next.next.next.next.next.next = ListNode(8)
 
-    l2=TreeNode(-2)
-    l2.right=TreeNode(-3)
+    l2 = TreeNode(-2)
+    l2.right = TreeNode(-3)
 
-    pathSum(l2,-5)
     # l3=ListNode(0)
     # l3.next=rotateRight(l1,2)
     # while l3:
