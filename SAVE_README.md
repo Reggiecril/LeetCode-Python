@@ -1,10 +1,11 @@
 # LeetCode-Practice
 
 ##### This is just a practice for LeetCode by Python. Author By [Reggiecril](https://github.com/Reggiecril).
-###### I used two language under this project. First time i used Pyhton to do it, but i mention Python have too good package that i can not clear to learn data strucutre, so i changed it to Java.
 ***
 ##### 1. Two Sum
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
     def twoSum(self, nums, target):
         """
@@ -25,6 +26,8 @@
 ***
 ##### 2. Add Two Numbers
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
     def addTwoNumbers(self, l1, l2):
         """
@@ -65,6 +68,8 @@
 ##### 3. Longest Substring Without Repeating Characters
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
     def lengthOfLongestSubstring(s):
         """
         :type s: str
@@ -87,6 +92,8 @@
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
     # only 22%
     def longestPalindrome(s):
         """
@@ -107,6 +114,8 @@
 
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
 
     #98%
@@ -130,6 +139,8 @@
 ##### 8. String to Integer (atoi)
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
 
     #99%
@@ -162,6 +173,8 @@
 ##### 9. Palindrome Number
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
     def isPalindrome(x):
         """
         :type x: int
@@ -191,6 +204,8 @@
 ##### 11. Container With Most Water
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
     def maxArea(self, height):
         """
         :type height: List[int]
@@ -218,6 +233,8 @@
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
     #100%
     def longestCommonPrefix(self, strs):
         """
@@ -243,6 +260,8 @@
 ##### 17. Letter Combinations of a Phone Number
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
 
     #99%
@@ -272,6 +291,8 @@
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 
     def removeNthFromEnd(head, n):
         """
@@ -300,6 +321,8 @@
 ##### 20. Valid Parentheses
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
     def isValid(s):
         """
@@ -350,6 +373,8 @@
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
     class Solution(object):
         def mergeTwoLists(self, l1, l2):
             """
@@ -379,6 +404,8 @@
 
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
 
     class Solution(object):
@@ -410,6 +437,8 @@
 
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
     class ListNode(object):
         def __init__(self, x):
@@ -447,6 +476,8 @@
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
     class Solution(object):
         def removeElement(self, nums, val):
             """
@@ -468,6 +499,8 @@
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 
     #99%
     def strStr(self, haystack: str, needle: str) -> int:
@@ -484,6 +517,8 @@
 ##### 35. Search Insert Position
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
     def searchInsert(self, nums, target):
         """
@@ -507,6 +542,8 @@
 ##### 39. Combination Sum
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
     
     ################Before Optimize(32%)###############
@@ -569,8 +606,14 @@
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
     #100% but this just for python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>3 becuase copy() is not available for python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>2
     def permute(nums):
         out_list = []
@@ -598,6 +641,8 @@
 ##### 47. Permutations II
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
     #low efficiency, it is basic algorithm logic
     def permuteUnique(self, nums: List[int]) -> List[List[int]]:
@@ -627,6 +672,8 @@
 ##### 54. Spiral Matrix
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
 def spiralOrder(matrix):
     """
@@ -671,6 +718,8 @@ def spiralOrder(matrix):
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
     
     def canJump(nums):
         if len(nums)<=1:
@@ -692,6 +741,8 @@ def spiralOrder(matrix):
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 
     def lengthOfLastWord(s: str) -> int:
         if len(s.strip())==0:
@@ -704,6 +755,8 @@ def spiralOrder(matrix):
 ##### 59. Spiral Matrix II
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
        def generateMatrix(n):
         """
@@ -746,6 +799,8 @@ def spiralOrder(matrix):
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 
     def rotateRight(head, k):
         l3 = head
@@ -770,6 +825,8 @@ def spiralOrder(matrix):
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 
     def uniquePaths(self, m: int, n: int) -> int:
         if m == 1 or n == 1:
@@ -786,6 +843,8 @@ def spiralOrder(matrix):
 ##### 63. Unique Paths II
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
 
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
@@ -821,6 +880,8 @@ def spiralOrder(matrix):
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 
     def minPathSum(self, grid: List[List[int]]) -> int:
         if len(grid)==0 or len(grid[0])==0:
@@ -844,6 +905,8 @@ def spiralOrder(matrix):
 
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
 
     #93%
@@ -869,6 +932,8 @@ def spiralOrder(matrix):
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 
     #98%
     def mySqrt(self, x: int) -> int:
@@ -892,6 +957,8 @@ def spiralOrder(matrix):
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
    def climbStairs(self, n):
         """
         :type n: int
@@ -912,6 +979,8 @@ def spiralOrder(matrix):
 ##### 83. Remove Duplicates from Sorted List
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
 
     #99.98%
@@ -935,6 +1004,8 @@ def spiralOrder(matrix):
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
    def isSameTree(p, q):
         """
         :type p: TreeNode
@@ -955,6 +1026,8 @@ def spiralOrder(matrix):
 ##### 101. Symmetric Tree
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
 
     def isSymmetric(root: TreeNode) -> bool:
@@ -977,6 +1050,8 @@ def spiralOrder(matrix):
 ##### 104. Maximum Depth of Binary Tree
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
    def maxDepth(self, root):
         """
@@ -1003,6 +1078,8 @@ def spiralOrder(matrix):
 
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
 
     def levelOrderBottom(self,root):
@@ -1037,6 +1114,8 @@ def spiralOrder(matrix):
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
     #99.72%
     def isBalanced(root):
         if not root:
@@ -1062,6 +1141,8 @@ def spiralOrder(matrix):
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 
     def minDepth(self, root: TreeNode) -> int:
         if root == None:
@@ -1085,6 +1166,8 @@ def spiralOrder(matrix):
 ##### 113. Path Sum II
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
 
     #99%
@@ -1117,6 +1200,8 @@ def spiralOrder(matrix):
 ##### 136. Single Number
 
 ```python
+	# Edit By <font color=#0099ff>Python</font>
+	# Edit By <font color=#0099ff>Python</font>
 	# Edit By <font color=#0099ff>Python</font>
     def singleNumber(nums):
         return sum(set(nums))*2-sum(nums)
