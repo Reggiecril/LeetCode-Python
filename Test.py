@@ -20,30 +20,24 @@ class TreeNode(object):
 #     for value in number[digits[count]].split():
 #         rever(number, digits, count + 1, string + value, list)
 #
-
-def myAtoi(str: str) -> int:
-    if not str or len(str.lstrip())==0 or len(str)==0:
-        return 0
-    str = str.lstrip()
-    minus = 1
-    if str[0] == "-":
-        str = str.replace("-", "", 1)
-        minus = -1
-    elif str[0] == "+":
-        str = str.replace("+", "", 1)
-
-        minus = 1
-    dig=0
-    for i in str:
-        if not i.isdigit():
-            return dig*minus
-        dig=dig*10+int(i)
-        if minus==1 and dig>2147483647:
-            return 2147483647
-        elif minus==-1 and dig>2147483648:
-            return -2147483648
-    return dig*minus
-
+def letterCombinations(digits: str):
+    mapper = {
+        '2': 'abc',
+        '3': 'def',
+        '4': 'ghi',
+        '5': 'jkl',
+        '6': 'mno',
+        '7': 'qprs',
+        '8': 'tuv',
+        '9': 'wxyz',
+    }
+    list=[""]
+    for i in range(len(digits)):
+        while len(list[0])==i:
+            string=list.pop(0)
+            for j in mapper[digits[i]]:
+                list.append(j+string)
+    return list
 
 if __name__ == '__main__':
     #     print(uniquePathsWithObstacles([
@@ -52,7 +46,7 @@ if __name__ == '__main__':
     #   [0,0,0]
     # ]))
     l = [-1, -2, -3, -4]
-    print(myAtoi("+1"))
+    print(letterCombinations("234"))
     l1 = ListNode(1)
     l1.next = ListNode(1)
     l1.next.next = ListNode(1)
