@@ -56,8 +56,7 @@ public class Test {
         lnode.next.next = new ListNode(13);
         lnode.next.next.next = new ListNode(14);
         lnode.next.next.next.next = new ListNode(15);
-        System.out.println(Integer.MAX_VALUE);
-        System.out.println(test.reverse(1534236469));
+
 
     }
 }
