@@ -648,6 +648,38 @@
 ***
 ##### 46. Permutations I
 
+```java
+	# Edit By JAVA
+    #83%
+	public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+            List<List<Integer>> list = new ArrayList<>();
+            if (candidates == null || candidates.length == 0)
+                return list;
+            Arrays.sort(candidates);
+            combination(candidates, list, new ArrayList<>(), target, 0);
+            return list;
+        }
+    
+        private void combination(int[] candidates, List<List<Integer>> outList, List<Integer> inList, int target, int count) {
+            if (target == 0) {
+                outList.add(new ArrayList<>(inList));
+                return;
+            }
+            if (target < 0) return;
+            for (int i = count; i < candidates.length; i++) {
+                if (i > count && candidates[i] == candidates[i - 1]) continue;
+                inList.add(candidates[i]);
+                combination(candidates, outList, inList, target - candidates[i], i + 1);
+                inList.remove(inList.size() - 1);
+            }
+    
+    
+        }
+```
+***
+***
+##### 46. Permutations I
+
 ```python
 	# Edit By <font color=#0099ff>Python</font>
     #100% but this just for python
@@ -701,6 +733,36 @@
             num_list.pop(-1)
         return
                     
+
+```
+***
+***
+##### 49. Group Anagrams
+
+```java
+	# Edit By JAVA
+    #97%
+   public List<List<String>> groupAnagrams(String[] strs) {
+           List<List<String>> outList=new ArrayList<>();
+           if(strs==null||strs.length==0)
+               return outList;
+           Map<String,List<String>> map=new HashMap<>();
+           for(String str:strs){
+               char[] ch=str.toCharArray();
+               Arrays.sort(ch);
+               String newStr=String.valueOf(ch);
+               if (map.containsKey(newStr)){
+                   map.get(newStr).add(str);
+               }else{
+                   List<String> inList=new ArrayList<>();
+                   inList.add(str);
+                   map.put(newStr,inList);
+               }
+   
+           }
+           return new ArrayList<>(map.values());
+   
+       }    
 
 ```
 ***
