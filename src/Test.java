@@ -19,37 +19,116 @@ public class Test {
     }
 
     public int reverse(int x) {
-        int sign=(x>0)?1:-1;
-        long g=Math.abs(x);
-        long re=0;
-        while(g>0){
-            long count=g%10;
-            re=re*10+count;
-            g/=10;
+        int sign = (x > 0) ? 1 : -1;
+        long g = Math.abs(x);
+        long re = 0;
+        while (g > 0) {
+            long count = g % 10;
+            re = re * 10 + count;
+            g /= 10;
         }
 
-        if ((re*sign)>Integer.MAX_VALUE)
+        if ((re * sign) > Integer.MAX_VALUE)
             return 0;
-        else if((re*sign)<Integer.MIN_VALUE)
+        else if ((re * sign) < Integer.MIN_VALUE)
             return 0;
-        return (int)re*sign;
+        return (int) re * sign;
 
     }
-    public String intToRoman(int num){
-        //0000,1000,2000,3000
-        String M[] = {"", "M", "MM", "MMM"};
-        //000,100,200,300,400,500,600,700,800,900
-        String C[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
-        //00,10,20,30,40,50,60,70,80,90
-        String X[] = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
-        //0,1,2,3,4,5,6,7,8,9
-        String I[] = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
-        return M[num/1000]+C[(num%1000)/100]+X[(num%100)/10]+I[num%10];
+
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        List<List<Integer>> list = new ArrayList<>();
+        if (candidates == null || candidates.length == 0)
+            return list;
+        Arrays.sort(candidates);
+        combination(candidates, list, new ArrayList<>(), target, 0);
+        return list;
     }
 
+    private void combination(int[] candidates, List<List<Integer>> outList, List<Integer> inList, int target, int count) {
+        if (target == 0) {
+            outList.add(new ArrayList<>(inList));
+            return;
+        }
+        if (target < 0) return;
+        for (int i = count; i < candidates.length; i++) {
+            if (i > count && candidates[i] == candidates[i - 1]) continue;
+            inList.add(candidates[i]);
+            combination(candidates, outList, inList, target - candidates[i], i + 1);
+            inList.remove(inList.size() - 1);
+        }
+
+
+    }
+
+    public List<List<String>> groupAnagrams(String[] strs) {
+        List<List<String>> outList=new ArrayList<>();
+        if(strs==null||strs.length==0)
+            return outList;
+        Map<String,List<String>> map=new HashMap<>();
+        for(String str:strs){
+            char[] ch=str.toCharArray();
+            Arrays.sort(ch);
+            String newStr=String.valueOf(ch);
+            if (map.containsKey(newStr)){
+                map.get(newStr).add(str);
+            }else{
+                List<String> inList=new ArrayList<>();
+                inList.add(str);
+                map.put(newStr,inList);
+            }
+
+        }
+        return new ArrayList<>(map.values());
+
+    }
+
+    public List<List<Integer>> threeSum(int[] nums) {
+        if(nums.length<3 || nums==null)
+            return new ArrayList<>();
+        Set<List<Integer>> outList=new HashSet<>();
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length; i++) {
+            if (i>0 && nums[i]==nums[i-1])
+                continue;
+            int pre=nums[i];
+            Map<Integer,Integer> map=new HashMap<>();
+            for (int j = i+1; j < nums.length; j++) {
+                int value=nums[j];
+                int diff=-(pre+value);
+                if (map.containsKey(diff)){
+                    outList.add(Arrays.asList(pre,nums[map.get(diff)],value));
+
+                }else{
+                    map.put(value,j);
+                }
+
+            }
+        }
+        return new ArrayList<>(outList);
+    }
     public static void main(String[] args) {
 
         Test test = new Test();
+        int [][] i={{1,3},{2,6},{8,10},{15,18}};
+        int []num={-1, 0, 1, 2, -1, -4};
+        System.out.println(test.threeSum(num).toString());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         //Test set--TreeNode
         TreeNode tree = new TreeNode(10);
@@ -66,7 +145,6 @@ public class Test {
         lnode.next.next.next = new ListNode(14);
         lnode.next.next.next.next = new ListNode(15);
 
-        System.out.println(test.intToRoman(1994));
     }
 }
 
