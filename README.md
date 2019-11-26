@@ -619,6 +619,50 @@
 ```
 ***
 ***
+##### 38. Count And Say
+
+```java
+public String countAndSay(int n) {
+        if (n==0)
+            return "";
+        else if (n==1)
+            return "1";
+        else if(n==2)
+            return "11";
+        String str="11";
+        for (int i = 3; i <= n; i++) {
+            int count=0;
+            String newStr="";
+            for (int j = 0; j < str.length(); j++) {
+                if (j==str.length()-1){
+                    if (str.charAt(j)==str.charAt(j-1)){
+                        count++;
+                    }else {
+                        newStr+=(String.valueOf(count)+str.charAt(j-1));
+                        count=1;
+                    }
+                    newStr+=(String.valueOf(count)+str.charAt(j));
+                    break;
+                }
+                if (j==0) {
+                    count++;
+                    continue;
+                }
+                if (str.charAt(j)==str.charAt(j-1)){
+                    count++;
+                }else {
+                    newStr+=(String.valueOf(count)+str.charAt(j-1));
+                    count=1;
+                }
+
+            }
+            str=newStr;
+        }
+        return str;
+    }
+```
+***
+***
 ##### 39. Combination Sum
 
 ```python
@@ -1210,6 +1254,28 @@ def spiralOrder(matrix):
 ```
 ***
 ***
+##### 108. Convert Sorted Array To Binary Search Tree
+
+```java
+    public TreeNode sortedArrayToBST(int[] nums) {
+            return sortedArrayToBST(nums, 0, nums.length);
+        }
+    
+        public TreeNode sortedArrayToBST(int[] nums,int start, int end) {
+            if(start == end) {
+                return null;
+            }
+    
+            int mid = start + (end - start) / 2;
+            TreeNode root = new TreeNode(nums[mid]);
+            root.left = sortedArrayToBST(nums, start, mid);
+            root.right = sortedArrayToBST(nums, mid + 1, end);
+    
+            return root;
+        }
+```
+***
+***
 ##### 110. Balanced Binary Tree
 
 ```python
@@ -1291,11 +1357,124 @@ def spiralOrder(matrix):
 ```
 ***
 ***
+##### 		118. Pascal's Triangle      
+```java
+        public List<List<Integer>> generate(int numRows) {
+            List<List<Integer>> outList=new ArrayList<>();
+            for(int i=0;i<numRows;i++){
+                if(i==0)
+                    outList.add(Arrays.asList(1));
+                else if (i==1)
+                    outList.add(Arrays.asList(1,1));
+                else {
+                    List<Integer> inList=new ArrayList<>();
+                    inList.add(1);
+                    for(int j=1;j<i;j++){
+                        inList.add(outList.get(i-1).get(j-1)+outList.get(i-1).get(j));
+                    }
+                    inList.add(1);
+                    outList.add(inList);
+                }
+    
+            }
+            return outList;
+        }
+```
+***
+***
+##### 		119. Pascal's Triangle II  
+```java
+    public List<Integer> getRow(int rowIndex) {
+        List<Integer> pre=new ArrayList<>();
+        rowIndex++;
+        if (rowIndex==1) {
+            pre.add(1);
+            return pre;
+        }else if(rowIndex==2)
+        {
+            pre.add(1);
+            pre.add(1);
+            return pre;
+        }else {
+            pre.add(1);
+            pre.add(1);
+        }
+        for (int i = 3; i <= rowIndex; i++) {
+            List<Integer> cur=new ArrayList<>();
+
+            for (int j = 0; j < i; j++) {
+                if (j==0)
+                    cur.add(1);
+                else if (j==i-1){
+                    cur.add(1);
+                    pre=new ArrayList<>(cur);
+                }else {
+                    cur.add(pre.get(j-1)+pre.get(j));
+                }
+            }
+        }
+        return pre;
+    }
+```
+***
+
+***
 ##### 136. Single Number
 
 ```python
 	# Edit By <font color=#0099ff>Python</font>
     def singleNumber(nums):
         return sum(set(nums))*2-sum(nums)
+```
+***
+***
+##### 	141. Linked List Cycle   
+```java
+    public boolean hasCycle(ListNode head) {
+        ListNode fast=head,slow=head;
+        while(fast!=null&&fast.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+            if(slow==fast)
+                return true;
+        }
+        return false;
+    }
+```
+***
+***
+##### 160. Intersection of two linkedlists
+
+```java
+    # Edit By <font color=#0099ff>Java</font>
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if(headA==null||headB==null)
+            return null;
+        ListNode p1=headA,p2=headB;
+        while(p1!=p2){
+            p1=p1==null?headB:p1.next;
+            p2=p2==null?headA:p2.next;
+        }
+        return p1;
+    }
+```
+***
+***
+##### 171. Excel Sheet Column Number    
+```java
+    public int titleToNumber(String s) {
+        if (s==null||s.length()==0)
+            return 0;
+        int length=1;
+        int total=0;
+        for (int i = s.length()-1; i >=0 ; i--,length*=26) {
+            if (length==1)
+                total+=s.charAt(i)-'A'+1;
+            else {
+                total+=(s.charAt(i)-'A'+1)*length;
+            }
+        }
+        return total;
+    }
 ```
 ***
