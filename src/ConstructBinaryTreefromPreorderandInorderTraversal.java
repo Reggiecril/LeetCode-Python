@@ -14,7 +14,7 @@ public class ConstructBinaryTreefromPreorderandInorderTraversal {
         return buildTree(preorder,inorder,0,inorder.length-1,map);
     }
     public TreeNode buildTree(int[] preorder, int[] inorder, int start, int end, Map<Integer,Integer> map){
-        if (start>end)
+        if (start>end)//
             return null;
         int index=map.get(preorder[preindex]);
         TreeNode root=new TreeNode(preorder[preindex]);
