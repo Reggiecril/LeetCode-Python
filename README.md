@@ -1596,7 +1596,23 @@ def spiralOrder(matrix):
     }
 ```
 ***
-
+***
+##### 		121.Best Time to Buy and Sell Stock    
+```java
+    public int maxProfit(int[] prices) {
+            int minprice=Integer.MAX_VALUE;
+            int max=0;
+            for (int i = 0; i < prices.length; i++) {
+                if (minprice>prices[i])
+                    minprice=prices[i];
+                if (prices[i]-minprice>max)
+                    max=prices[i]-minprice;
+    
+            }
+            return max;
+        }
+```
+***
 ***
 ##### 136. Single Number
 
