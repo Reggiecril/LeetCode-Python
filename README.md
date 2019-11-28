@@ -1772,6 +1772,40 @@ class MinStack {
 ```
 ***
 ***
+##### 168. Excel Sheet Column Title      
+```java
+    public String convertToTitle(int n) {
+            StringBuilder str=new StringBuilder();
+            while (n>0){
+                if (n>26)
+                    if (n%26==0){
+                        str.append('Z');
+                    }else {
+                        str.append((char) ('A' + n % 26 - 1));
+                    }
+                else {
+                    str.append((char)('A'+n-1));
+                    break;
+                }
+                if (n%26==0)
+                    n=(n-26)/26;
+                else
+                    n=(n-n%26)/26;
+            }
+            return str.reverse().toString();
+        }
+```
+***
+***
+##### 169. Majority Element 
+```java
+    public int majorityElement(int[] nums) {
+            Arrays.sort(nums);
+            return nums[nums.length/2];
+        }
+```
+***
+***
 ##### 171. Excel Sheet Column Number    
 ```java
     public int titleToNumber(String s) {
