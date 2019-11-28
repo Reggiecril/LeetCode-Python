@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e5eae21-7ed4-43f6-aac4-99a9a5bc942b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ValidPalindrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LeetCode-PythonAndJava.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LeetCode-PythonAndJava.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MinStack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeetCode-Python.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeetCode-PythonAndJava.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +49,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574920054480</updated>
-      <workItem from="1574920055598" duration="42000" />
+      <workItem from="1574920055598" duration="1032000" />
     </task>
     <servers />
   </component>
