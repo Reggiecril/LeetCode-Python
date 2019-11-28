@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c14a717-0abc-43bd-bdf5-8caae8d914fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/BestTimetoBuyandSellStock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,7 +47,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574917168504</updated>
-      <workItem from="1574917169673" duration="627000" />
+      <workItem from="1574917169673" duration="1197000" />
     </task>
     <servers />
   </component>
