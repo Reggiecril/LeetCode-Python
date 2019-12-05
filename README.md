@@ -1329,6 +1329,28 @@ def spiralOrder(matrix):
 ```
 ***
 ***
+##### 94. Binary Tree Inorder Traversal 
+
+```java
+	# Edit By Java
+
+    public void postorder(TreeNode root,List<Integer> list){
+            if (root==null)
+                return;
+            postorder(root.left,list);
+            list.add(root.val);
+            postorder(root.right,list);
+    
+    
+        }
+        public List<Integer> inorderTraversal(TreeNode root) {
+            List<Integer> list=new ArrayList<>();
+            postorder(root,list);
+            return list;
+        }
+```
+***
+***
 ##### 100. Same Tree
 
 ```python
